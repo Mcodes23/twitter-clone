@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environments'; // Import environment
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  private apiUrl = `${environment.apiUrl}/users`; // Use API URL from environment file
 
   constructor(private http: HttpClient) {}
 
